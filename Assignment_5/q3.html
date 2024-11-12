@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome String</title>
+</head>
+
+<body>
+    <form action="" onsubmit="checkPalindrome(str.value)">
+        <label for="str">Enter String</label>
+        <input type="text" name="str" id="str" />
+        <input type="submit" value="Check" />
+    </form>
+    <script>
+        function checkPalindrome(str) {
+            let revStr = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                revStr += str[i];
+            }
+            if (revStr == str) {
+                alert("String is Palindrome");
+            } else {
+                alert("String is not Palindrome");
+            }
+        }
+    </script>
+</body>
+
+</html>

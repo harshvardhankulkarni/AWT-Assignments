@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leap Year</title>
+  </head>
+  <body>
+    <form action="" onsubmit="checkLeapYear(year.value)">
+      <label for="year">Enter Year</label>
+      <input type="text" name="year" id="year" pattern="[1-9]{1}[0-9]{3}" />
+      <input type="submit" value="Check" />
+    </form>
+    <script>
+      function checkLeapYear(year) {
+        if (Number(year) % 4 == 0) {
+          if (Number(year) % 100 == 0) {
+            if (Number(year) % 400 == 0) {
+              alert(year + " is Leap year");
+            } else {
+              alert(year + " is not Leap year");
+            }
+          } else {
+            alert(year + " is Leap year");
+          }
+        } else {
+          alert(year + " is not Leap year");
+        }
+      }
+    </script>
+  </body>
+</html>
