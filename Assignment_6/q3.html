@@ -5,10 +5,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            width: 30%;
+        }
+
+        .grid-item1 {
+            grid-column: 1/4;
+            width: 88%;
+        }
+
+        input[type='text'] {
+            border: 2px solid black;
+            width: 100%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            border: 2px solid black;
+            padding: 10px 20px;
+            margin: 10px;
+            width: 95%;
+        }
+
+        main {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 
 <body>
+    <center>
+        <h1>Calculator</h1>
+    </center>
+    <main>
+        <div class="grid-container">
+            <div class="grid-item1">
+                <input type="text" name="number" id="number" pattern="[0-9\.]">
+            </div>
+            <div class="grid-item"> <button type="button" onclick="calculate()">GO</button></div>
 
+            <div class="grid-item"><button type="button" onclick="append_1()">1</button></div>
+            <div class="grid-item"><button type="button" onclick="append_2()">2</button></div>
+            <div class="grid-item"><button type="button" onclick="append_3()">3</button></div>
+            <div class="grid-item"><button type="button" onclick="clear_input()">C</button></div>
+
+            <div class="grid-item"><button type="button" onclick="append_4()">4</button></div>
+            <div class="grid-item"><button type="button" onclick="append_5()">5</button></div>
+            <div class="grid-item"><button type="button" onclick="append_6()">6</button></div>
+            <div class="grid-item"><button type="button" onclick="add()">+ </button></div>
+
+            <div class="grid-item"> <button type="button" onclick="append_7()">7</button></div>
+            <div class="grid-item"> <button type="button" onclick="append_8()">8</button></div>
+            <div class="grid-item"> <button type="button" onclick="append_9()">9</button></div>
+            <div class="grid-item"> <button type="button" onclick="sub()">-</button></div>
+
+            <div class="grid-item"><button type="button" onclick="append_0()">0</button></div>
+            <div class="grid-item"><button type="button" onclick="append_dot()">.</button></div>
+            <div class="grid-item"> <button type="button" onclick="mul()">*</button></div>
+            <div class="grid-item"><button type="button" onclick="div()">/</button></div>
+        </div>
+    </main>
+    <script>
+        let num = 0;
+
+        function calculate() {
+            calculation = document.getElementById('number').value;
+            ans = eval(calculation);
+            document.getElementById('number').value = ans;
+        }
+
+        function clear_input() {
+            console.log('Clear Input');
+            document.getElementById('number').value = null;
+        }
+
+        function add() {
+            document.getElementById('number').value += '+';
+        }
+
+        function sub() {
+            document.getElementById('number').value += '-';
+        }
+
+        function mul() {
+            document.getElementById('number').value += '*';
+        }
+
+        function div() {
+            document.getElementById('number').value += '/';
+        }
+
+        function append_1() {
+            document.getElementById('number').value += '1';
+        }
+        function append_2() {
+            document.getElementById('number').value += '2';
+        }
+        function append_3() {
+            document.getElementById('number').value += '3';
+        }
+        function append_4() {
+            document.getElementById('number').value += '4';
+        }
+        function append_5() {
+            document.getElementById('number').value += '5';
+        }
+        function append_6() {
+            document.getElementById('number').value += '6';
+        }
+        function append_7() {
+            document.getElementById('number').value += '7';
+        }
+        function append_8() {
+            document.getElementById('number').value += '8';
+        }
+        function append_9() {
+            document.getElementById('number').value += '9';
+        }
+        function append_0() {
+            document.getElementById('number').value += '0';
+        }
+        function append_dot() {
+            document.getElementById('number').value += '.';
+        }
+    </script>
 </body>
 
 </html>
